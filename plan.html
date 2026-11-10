@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2ead9">
+  <meta name="description" content="A student zine on food, money, and dorm kitchen cooking.">
+  <title>My Lunch — Today 700 ₸</title>
+  <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/vendor/jquery.min.js" defer></script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/common.js" defer></script>
+  <script src="assets/js/plan.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">₸</span> Today 700</a>
+      <nav aria-label="Main menu"><a href="index.html">Zine</a><a href="plan.html" aria-current="page">My Lunch</a><a href="market.html">Groceries</a><a href="split.html">Shared Bill</a></nav>
+      <span class="edition">ASTANA / ISSUE 01</span>
+    </div>
+  </header>
+  <main id="main" class="shell">
+    <section class="page-intro">
+      <p class="eyebrow"><span class="ink-dot"></span> 02 / LUNCH PLANNER</p>
+      <h1>What can I<br><em>eat today?</em></h1>
+      <p class="lede">Enter your budget and tell us what's in your kitchen. We'll pick meals that fit your price, time, and cooking equipment.</p>
+    </section>
+    <div class="workbench">
+      <section class="paper-panel" aria-labelledby="plan-title">
+        <h2 id="plan-title">Your Criteria</h2>
+        <form id="plan-form" novalidate>
+          <div class="field-grid">
+            <div class="field">
+              <label class="form-label" for="budget">Available budget, ₸</label>
+              <input class="form-control" id="budget" name="budget" type="number" aria-describedby="budget-error" placeholder="700" min="200" max="10000" step="1" inputmode="numeric" required>
+              <p class="field-error" id="budget-error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label class="form-label" for="minutes">Minutes available</label>
+              <input class="form-control" id="minutes" name="minutes" type="number" aria-describedby="minutes-error" placeholder="20" min="5" max="90" step="1" inputmode="numeric" required>
+              <p class="field-error" id="minutes-error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label class="form-label" for="portions">Number of servings</label>
+              <input class="form-control" id="portions" name="portions" type="number" aria-describedby="portions-error" placeholder="1" min="1" max="6" step="1" inputmode="numeric" required>
+              <p class="field-error" id="portions-error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label class="form-label" for="gear">Available equipment</label>
+              <select class="form-select" id="gear" name="gear" aria-describedby="gear-error" required>
+                <option value="">Choose an option</option>
+                <option value="none">Fork &amp; plate (No gear)</option>
+                <option value="kettle">Kettle</option>
+                <option value="microwave">Microwave</option>
+                <option value="stove">Stove &amp; kettle</option>
+                <option value="any">Any equipment</option>
+              </select>
+              <p class="field-error" id="gear-error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label class="form-label" for="lunch-date">Target date</label>
+              <input class="form-control" id="lunch-date" name="lunch-date" type="date" aria-describedby="lunch-date-error" placeholder="" required>
+              <p class="field-error" id="lunch-date-error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label class="form-label" for="mode">Budget calculation mode</label>
+              <select class="form-select" id="mode" name="mode" aria-describedby="mode-error" required>
+                <option value="">Choose an option</option>
+                <option value="portion">Ingredient cost per serving</option>
+                <option value="checkout">Full retail packages at checkout</option>
+              </select>
+              <p class="field-error" id="mode-error" aria-live="polite"></p>
+            </div>
+          </div>
+          <button class="action" type="submit">Find meals <span aria-hidden="true">→</span></button>
+          <p class="notice" id="plan-notice" role="status" hidden></p>
+        </form>
+        <button class="quiet-button" type="button" data-disclosure aria-expanded="false" aria-controls="price-explainer">Why does checkout cost more? <span aria-hidden="true">+</span></button>
+        <p class="disclosure" id="price-explainer" hidden>Per serving, we only count the grams or pieces actually used. In checkout mode, we round every ingredient up to a whole store package.</p>
+      </section>
+      <section class="receipt-panel" aria-labelledby="plan-result-title">
+        <p class="receipt-kicker">CALCULATION / LUNCH</p>
+        <h2 id="plan-result-title">On the Menu</h2>
+        <p id="plan-initial">Matching meals and remaining budget will appear here.</p>
+        <div id="plan-result" hidden></div>
+      </section>
+    </div>
+    <p class="section-note">The budget applies to all servings combined. Costs, prep times, and package sizes are designed for the educational model.</p>
+  </main>
+  <footer class="shell site-footer">
+    <div class="footer-main"><strong>Today 700 ₸</strong><span>Student Zine · Astana</span></div>
+    <p>Educational project. Prices are illustrative and not affiliated with actual stores. Prepared with assistance from ChatGPT (concept, code, text, and vector graphics). Bootstrap and jQuery used under the MIT License.</p>
+  </footer>
+</body>
+</html>

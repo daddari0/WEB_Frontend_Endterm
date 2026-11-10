@@ -37,5 +37,5 @@ Then open http://localhost:8000/ in your browser (or use VS Code Live Server). A
 - **Shared Bill Split:** Cart data persists across pages via browser storage. The total plus reserve buffer is divided using integer math; any odd remainder distributes +1 ₸ across the first participants.
 - **Animation Queue Safety:** jQuery effects (`fadeIn`, `fadeTo`, `slideDown`, `animate`) always call `.stop(true, true)` or `.stop(true, false)` to prevent queue pile-up during rapid repeated user clicks. `prefers-reduced-motion` is respected.
 
-See `CREDITS.md` for licenses and attributions.
-# WEB_Frontend_Endterm
+See `assets/vendor/` for third-party library licenses (Bootstrap, jQuery).
+

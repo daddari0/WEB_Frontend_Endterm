@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2ead9">
+  <meta name="description" content="A student zine on food, money, and dorm kitchen cooking.">
+  <title>Student Lunch Zine — Today 700 ₸</title>
+  <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/vendor/jquery.min.js" defer></script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/common.js" defer></script>
+  <script src="assets/js/menu.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">₸</span> Today 700</a>
+      <nav aria-label="Main menu"><a href="index.html" aria-current="page">Zine</a><a href="plan.html">My Lunch</a><a href="market.html">Groceries</a><a href="split.html">Shared Bill</a></nav>
+      <span class="edition">ASTANA / ISSUE 01</span>
+    </div>
+  </header>
+  <main id="main" class="shell">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="ink-dot"></span> STUDENT ZINE ON FOOD &amp; MONEY</p>
+        <h1 id="hero-title">Today I have<br><em>700 ₸</em></h1>
+        <p class="lede">Lunch between classes, a kettle in the dorm kitchen, and the eternal question: what can I eat on what's left?</p>
+        <div class="hero-actions"><a href="#menu" class="action">Browse menu <span aria-hidden="true">↓</span></a><a href="plan.html" class="text-link">Calculate my lunch <span aria-hidden="true">↗</span></a></div>
+      </div>
+      <figure class="hero-art">
+        <img src="assets/img/cover.svg" width="640" height="580" alt="Hand-drawn plate with toast and cucumbers on a checkered napkin. Nearby receipt marked 700 ₸.">
+        <figcaption><span>FIG. 01</span><span>DORM KITCHEN LUNCH</span></figcaption>
+      </figure>
+    </section>
+    <section id="menu" class="section menu-section" aria-labelledby="menu-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / CHOOSE LUNCH</p><h2 id="menu-title">Budget Menu</h2></div><p>How much will a serving cost if you have ingredients at home? Whole packages are calculated separately.</p></div>
+      <div class="filters">
+        <div class="chip-row" aria-label="Food categories">
+          <button class="chip" data-category="all" aria-pressed="true" type="button">All meals</button>
+          <button class="chip" data-category="Hearty" aria-pressed="false" type="button">Hearty</button>
+          <button class="chip" data-category="On the go" aria-pressed="false" type="button">On the go</button>
+          <button class="chip" data-category="Morning" aria-pressed="false" type="button">Morning</button>
+        </div>
+        <label class="search-label" for="menu-search"><span>Search for a meal or ingredient</span><input class="form-control" id="menu-search" type="search" placeholder="e.g. beans"></label>
+      </div>
+      <p class="results-count" id="menu-count" aria-live="polite"></p>
+      <div class="meal-grid" id="menu-results"></div>
+      <p class="empty" id="menu-empty" hidden>No meals found. Try a different search term or select "All meals".</p>
+    </section>
+    <aside class="margin-note"><span class="eyebrow">MARGIN NOTE</span><p>A 500 ₸ portion and a 500 ₸ receipt are two different things. If the pantry is empty, you have to buy whole packages at the store.</p><a href="market.html" class="text-link">View package prices ↗</a></aside>
+  </main>
+  <footer class="shell site-footer">
+    <div class="footer-main"><strong>Today 700 ₸</strong><span>Student Zine · Astana</span></div>
+    <p>Educational project. Prices are illustrative and not affiliated with actual stores. Prepared with assistance from ChatGPT (concept, code, text, and vector graphics). Bootstrap and jQuery used under the MIT License.</p>
+  </footer>
+</body>
+</html>

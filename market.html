@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2ead9">
+  <meta name="description" content="A student zine on food, money, and dorm kitchen cooking.">
+  <title>Groceries — Today 700 ₸</title>
+  <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/vendor/jquery.min.js" defer></script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/common.js" defer></script>
+  <script src="assets/js/market.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">₸</span> Today 700</a>
+      <nav aria-label="Main menu"><a href="index.html">Zine</a><a href="plan.html">My Lunch</a><a href="market.html" aria-current="page">Groceries</a><a href="split.html">Shared Bill</a></nav>
+      <span class="edition">ASTANA / ISSUE 01</span>
+    </div>
+  </header>
+  <main id="main" class="shell">
+    <section class="page-intro">
+      <p class="eyebrow"><span class="ink-dot"></span> 03 / BASKET</p>
+      <h1>What to grab<br><em>at checkout?</em></h1>
+      <p class="lede">Pick groceries in full retail packs. The cart tracks the total and passes your purchases directly to the bill splitter.</p>
+    </section>
+    <div class="workbench market-workbench">
+      <section class="paper-panel" aria-labelledby="market-title">
+        <h2 id="market-title">Grocery Shelf</h2>
+        <div class="market-filters">
+          <label class="search-label" for="market-search"><span>Search</span><input class="form-control" id="market-search" type="search" placeholder="e.g. bread"></label>
+          <label class="search-label" for="market-category"><span>Department</span><select class="form-select" id="market-category"><option value="">All departments</option></select></label>
+          <label class="search-label" for="market-sort"><span>Sort by</span><select class="form-select" id="market-sort"><option value="default">Shelf order</option><option value="low">Price: Low to High</option><option value="high">Price: High to Low</option></select></label>
+        </div>
+        <p class="results-count" id="market-count" aria-live="polite"></p>
+        <div id="market-results"></div>
+        <p id="market-empty" class="empty" hidden>Nothing found on this shelf. Try a different search query or department.</p>
+      </section>
+      <section class="receipt-panel" aria-labelledby="cart-title">
+        <p class="receipt-kicker">RECEIPT / PACKAGES</p>
+        <h2 id="cart-title">Your Cart</h2>
+        <div id="cart-items"></div>
+        <div class="receipt-total"><span>Total</span><strong id="cart-total" aria-live="polite">0 ₸</strong></div>
+        <p id="cart-notice" class="notice" role="status" hidden></p>
+        <div class="receipt-actions"><a class="action" href="split.html">Split the bill <span aria-hidden="true">→</span></a><button class="quiet-button" id="clear-cart" type="button">Clear cart</button></div>
+      </section>
+    </div>
+  </main>
+  <footer class="shell site-footer">
+    <div class="footer-main"><strong>Today 700 ₸</strong><span>Student Zine · Astana</span></div>
+    <p>Educational project. Prices are illustrative and not affiliated with actual stores. Prepared with assistance from ChatGPT (concept, code, text, and vector graphics). Bootstrap and jQuery used under the MIT License.</p>
+  </footer>
+</body>
+</html>

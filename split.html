@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2ead9">
+  <meta name="description" content="A student zine on food, money, and dorm kitchen cooking.">
+  <title>Shared Bill — Today 700 ₸</title>
+  <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/vendor/jquery.min.js" defer></script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/common.js" defer></script>
+  <script src="assets/js/split.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">₸</span> Today 700</a>
+      <nav aria-label="Main menu"><a href="index.html">Zine</a><a href="plan.html">My Lunch</a><a href="market.html">Groceries</a><a href="split.html" aria-current="page">Shared Bill</a></nav>
+      <span class="edition">ASTANA / ISSUE 01</span>
+    </div>
+  </header>
+  <main id="main" class="shell">
+    <section class="page-intro">
+      <p class="eyebrow"><span class="ink-dot"></span> 04 / SHARED RECEIPT</p>
+      <h1>Split for two.<br><em>Or the whole dorm.</em></h1>
+      <p class="lede">Splitting dinner with roommates? We divide the cart down to the exact tenge and check if it fits everyone's budget.</p>
+    </section>
+    <div class="workbench">
+      <section class="paper-panel" aria-labelledby="split-form-title">
+        <h2 id="split-form-title">Shared Dinner</h2>
+        <div class="cart-brief"><p id="split-basket-label"></p><a href="market.html" class="text-link">Edit purchases ↗</a></div>
+        <form id="split-form" novalidate>
+          <div class="field-grid">
+            <div class="field">
+              <label class="form-label" for="meeting">Occasion / Dinner name</label>
+              <input class="form-control" id="meeting" name="meeting" type="text" aria-describedby="meeting-error" placeholder="Post-exam dinner" minlength="3" maxlength="40" required>
+              <p class="field-error" id="meeting-error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label class="form-label" for="people">Number of people</label>
+              <input class="form-control" id="people" name="people" type="number" aria-describedby="people-error" placeholder="2" min="2" max="12" step="1" inputmode="numeric" required>
+              <p class="field-error" id="people-error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label class="form-label" for="limit">Budget per person, ₸</label>
+              <input class="form-control" id="limit" name="limit" type="number" aria-describedby="limit-error" placeholder="700" min="100" max="10000" step="1" inputmode="numeric" required>
+              <p class="field-error" id="limit-error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label class="form-label" for="reserve">Buffer / Reserve, %</label>
+              <input class="form-control" id="reserve" name="reserve" type="number" aria-describedby="reserve-error" placeholder="0" min="0" max="30" step="1" inputmode="numeric" required>
+              <p class="field-error" id="reserve-error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label class="form-label" for="dinner-date">Dinner date</label>
+              <input class="form-control" id="dinner-date" name="dinner-date" type="date" aria-describedby="dinner-date-error" placeholder="" required>
+              <p class="field-error" id="dinner-date-error" aria-live="polite"></p>
+            </div>
+          </div>
+          <button class="action" type="submit">Split the bill <span aria-hidden="true">→</span></button>
+          <p id="split-notice" class="notice" role="status" hidden></p>
+        </form>
+        <button class="quiet-button" type="button" data-disclosure aria-expanded="false" aria-controls="split-explainer">What happens with an odd tenge? <span aria-hidden="true">+</span></button>
+        <p class="disclosure" id="split-explainer" hidden>We divide the total evenly in whole tenge. If there is a remainder, the first few people pay 1 ₸ more. The sum of all shares always equals the grand total including buffer.</p>
+      </section>
+      <section class="receipt-panel" aria-labelledby="split-result-title">
+        <p class="receipt-kicker">RECEIPT / SHARES</p>
+        <h2 id="split-result-title">Individual Shares</h2>
+        <p id="split-initial">After calculation, the grand total, reserve, and each person's share will appear here.</p>
+        <div id="split-result" hidden></div>
+      </section>
+    </div>
+  </main>
+  <footer class="shell site-footer">
+    <div class="footer-main"><strong>Today 700 ₸</strong><span>Student Zine · Astana</span></div>
+    <p>Educational project. Prices are illustrative and not affiliated with actual stores. Prepared with assistance from ChatGPT (concept, code, text, and vector graphics). Bootstrap and jQuery used under the MIT License.</p>
+  </footer>
+</body>
+</html>
